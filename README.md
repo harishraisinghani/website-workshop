@@ -8,6 +8,7 @@ This workshop contains the following activities:
 ## Setup
 * Create a free account on `https://repl.it`
 * Create a free account on Heroku at `https://signup.heroku.com/login`
+* Create a free Google account, which will be used for Google Analytics
 
 ## HTML, CSS and JS (JavaScript)
 We are going to interact with the various key code components of websites using `repl.it`. HTML (structure) + CSS (style) + JS (interaction)  = webpage
@@ -77,15 +78,128 @@ The `<div></div>` tags represent a container unit which help divide the HTML doc
 
 > Add `<div></div>` tags around each of your paragraphs
 
-#### Styling
+### CSS (for Styling)
+There is an ocean of knowledge on the subject of CSS and best practices. For an intro tutorial, see: https://www.w3schools.com/css/css_intro.asp 
 
+We'll only touch upon the basics here.
 
-### CSS
+#### Inline Styling
+An inline CSS is used to apply a unique style to a single HTML element:
 
-* Using `style.css` to get the same styling
+`<h1 style="color:blue;">This is a Blue Heading</h1>`
+
+> Apply inline CSS to your paragraph element
+
+#### Internal CSS
+An internal CSS is defined in the `<head>` section of an HTML page within a `<style>` element:
+```
+<head>
+    <style>
+        body {background-color: powderblue;}
+        h1   {color: blue;}
+        p    {color: red;}
+    </style>
+</head>
+```
+> Apply internal CSS to your h1 element.
+
+#### External CSS file
+An external style sheet is used to define the style for many HTML pages.
+
+With an external style sheet, you can change the look of an entire web site, by changing one file!
+
+To use an external style sheet, add a `<link>` element to it in the `<head>` section of the HTML page:
+
+```
+<head>
+
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+```
+
+#### Classes vs. IDs
+* Classes - used to denote multiple elements that will receive the same sytling. In the HTML code, classess are denoted using the element keyword `class` in an HTML element:
+
+```
+<div class="introduction-section">
+```
+
+* IDs - are unique and can apply to only one element on the page:
+```
+<div class="introduction-section">
+    <p id="flight-details"> .... </p>
+</div>
+```
+
+In your external CSS file (i.e. `style.css`), class names are referenced with a `.` and id names with a `#`:
+```
+.introduction-section: {
+    color: red;
+}
+
+#flight-details: {
+    color: blue;
+}
+```
+
+> Replace any inline and internal CSS styling with external CSS defined in `style.css`.
 
 ### JS
-* Be able to access document elements and update them
+* Used to add behaviour to your webpage
+* For example, be able to access document elements and update them
+* Internal JavaScript is added using the `<script></script>` element tags in either the `<head>` or `<body>`
+* 
+
+Example (from w3schools.com):
+```
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+    function myFunction() {
+        document.getElementById("demo").innerHTML = "Paragraph changed.";
+    }
+    </script>
+</head>
+<body>
+    <h2>JavaScript in Head</h2>
+
+    <p id="demo">A Paragraph.</p>
+
+    <button type="button" onclick="myFunction()">Try it</button>
+</body>
+</html>
+```
+
+### Add Website tracking (e.g. Google Analytics)
+Tracking websites provides useful insights into what pages your users are viewing, for how long, from where, etc.. Here, we'll add a simple Google Analytics code snippet to track our demo Repl.it website.
+
+> Use your Google Account to sign into Google Analytics at https://analytics.google.com/web/
+
+> Under the `Admin` panel, create a `New Account` to track a website. Enter in an Account Name, your Website Name and use the URL of our demo Repl.it website (e.g. https://samplewebsite.hraisinghani.repl.co/).  
+
+![Google Analytics Setup](images/ga_account_setup.png)
+
+> Uncheck all the Data Sharing Settings and click on `Get Tracking ID`. You'll get a code snipped containing your Google Analytics tracking ID. Simply copy and paste this piece of code into your `<head>` element:
+
+```
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141780281-1"></script>
+
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-141780281-1');
+    </script>
+    ...
+</head>
+```
+> Now open up a few incognito tabs and go to your website. Observe what happens on your Google Analytics Home dashboard!
+
+There is a **ton** of information in Google Analytics so have fun exploring all the interesting data available!
 
 
 ## Setup Wordpress on Heroku
