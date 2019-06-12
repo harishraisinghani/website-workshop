@@ -201,12 +201,30 @@ Tracking websites provides useful insights into what pages your users are viewin
 
 There is a **ton** of information in Google Analytics so have fun exploring all the interesting data available!
 
-
 ## Setup Wordpress on Heroku
+Now we will create our website using Wordpress, a tool for creating websites supporting different types of web contents (i.e. blogs, mailing lists, forums, online stores, etc...). 
 
-`https://github.com/xyu/heroku-wp`
+Other website hosted solutions (usually for a monthly subscription fee) include:
+* Squarespace.com
+* WIX.com
+
+You can download and host Wordpress for free locally (https://wordpress.org) or used their hosted solution for a fee (https://wordpress.com). We are going to use Heroku for our Wordpress hosting solution, which offers a free basic hosting service. 
+
+> Go to `https://github.com/xyu/heroku-wp`
 
 > Click on `Deploy to Heroku` to run setup a demo instance
 
 ![Heroku demo](images/heroku_demo.png)
+
+> You will be directed to Heroku and asked to enter in your App name (all lowercase, words separated by hyphens). **This will makeup your website URL**. Scroll to the very bottom and select `Deploy app`. 
+
+![Heroku Wordpress setup](images/create_heroku_app.png)
+
+> Now go to `https://<your-app-name>.heorkuapp.com` to setup your Wordpress instance with a username/password and voila - your custom hosted website is ready!
+
+> Select `Customize` and start editing your website!
+
+![Customize Heroku Website](images/customize_heroku_website.png)
+
+**Note:** Because this is hosted Wordpress instance on Heroku is using a free/basic server, there might be functionality that is restricted (e.g. number of available plugins). Paying for a higher tier of service will unlock additional functionality.
 
