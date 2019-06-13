@@ -7,7 +7,9 @@ This workshop contains the following activities:
 
 ## Setup
 * Create a free account on `https://repl.it`
-* Create a free account on Heroku at `https://signup.heroku.com/login`
+
+* Create a 'free account' on Heroku at `https://signup.heroku.com/`. Note - in order to use the Wordpress add-on, you will need to verify your Heroku account using a credit card. You will get 1000 free hours of use per month. See https://devcenter.heroku.com/articles/account-verification
+
 * Create a free Google account, which will be used for Google Analytics
 
 ## HTML, CSS and JS (JavaScript)
@@ -133,11 +135,11 @@ To use an external style sheet, add a `<link>` element to it in the `<head>` sec
 
 In your external CSS file (i.e. `style.css`), class names are referenced with a `.` and id names with a `#`:
 ```
-.introduction-section: {
+.introduction-section {
     color: red;
 }
 
-#flight-details: {
+#flight-details {
     color: blue;
 }
 ```
@@ -227,4 +229,3 @@ You can download and host Wordpress for free locally (https://wordpress.org) or 
 ![Customize Heroku Website](images/customize_heroku_website.png)
 
 **Note:** Because this is hosted Wordpress instance on Heroku is using a free/basic server, there might be functionality that is restricted (e.g. number of available plugins). Paying for a higher tier of service will unlock additional functionality.
-
